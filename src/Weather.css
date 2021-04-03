@@ -34,9 +34,9 @@
 }
 .Weather img {
   float: left;
-  line-height: 60px;
-  display: inline-block;
   margin-right: 10px;
+  position: relative;
+  top: -20px;
 }
 .Weather .units {
   color: rgb(32, 33, 36);
