@@ -7,11 +7,12 @@ import WeatherInfo from "./WeatherInfo";
 
 export default function Weather(props){
     const [ready, setReady]=useState(false);
-    const [weatherData, setWeatherData]=useState({});
+    const [weatherData, setWeatherData] = useState({ ready: false });
     const [city, setCity]=useState(props.defaultCity);
     
     function handleResponse(response){
              setWeatherData({
+            ready: true,
             temperature: response.data.main.temp, 
             humidity: response.data.main.humidity,
             description: response.data.weather[0].description,
@@ -21,7 +22,7 @@ export default function Weather(props){
             city: response.data.name,
             
         });       
-        setReady(true);
+        
 
     }
      function handleSubmit(event){
@@ -43,7 +44,7 @@ export default function Weather(props){
     
    
 
-    if(ready){
+ if (weatherData.ready){
   return (
         
     
